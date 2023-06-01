@@ -5,7 +5,8 @@ SRC_DIR = src
 BIN_DIR = bin
 
 BINS = $(addprefix $(BIN_DIR)/, \
-				sum_of_round_numbers.out)
+				sum_of_round_numbers.out\
+				black_and_white.out)
 
 all: $(BIN_DIR) $(BINS)
 
