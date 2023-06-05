@@ -3,6 +3,7 @@
 #define TEMPLATE_INCLUDED
 
 #include <bits/stdc++.h>
+#define st size_t
 #define ll long long
 #define pb push_back
 #define ff first

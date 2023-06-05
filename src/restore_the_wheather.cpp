@@ -1,4 +1,13 @@
-#include "../include/template.hpp"
+#include <bits/stdc++.h>
+
+#define st size_t
+#define ll long long
+#define pb push_back
+#define ff first
+#define ss second
+#define mp make_pair
+#define ios ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
 
 /*
   output:
@@ -21,27 +30,35 @@ int main(void)
 	cin >> t;
 	
 	while (t--) {
-		ll n, k, b;
-		cin >> n>> k;
-		vector < pair < ll, ll > >fir;
-		vector < ll > sec,res(n);
-		for(ll i = 0 ; i < n ; i++) {
-			cin>>b;
-			fir.push_back(make_pair(b,i));
+		ll b, k;
+		st n;
+		cin >> n >> k;
+		
+		vector<pair<ll, st>> fir; // To keep track of the index of each element
+		vector<ll> sec, res(n);	  // Create the array of answers
+		
+		for (st i = 0; i < n; i++) {
+			cin >> b;
+			fir.push_back(make_pair(b, i));
 		}
-		for(ll i = 0 ; i < n ; i++) {
-			cin>>b;
+
+		for(st i = 0 ; i < n ; i++) {
+			cin >> b;
 			sec.push_back(b);
 		}
-		sort(fir.begin(),fir.end());
-		sort(sec.begin(),sec.end());
-		for(ll i = 0 ; i < n ; i++) {
+
+		// Sort the two arrays
+		sort(fir.begin(), fir.end());
+		sort(sec.begin(), sec.end());
+
+		// Build the answer
+		for(st i = 0; i < n; i++)
 			res[fir[i].second] = sec[i];
-		}
-		for(ll i = 0 ; i < n ; i++) {
-			cout<<res[i]<<" ";   
-		}
-		cout<<endl;
+		
+		for(st i = 0; i < n; i++)
+			cout << res[i] << " ";
+		
+		cout << endl;
 	}
 	
 	return 0;
