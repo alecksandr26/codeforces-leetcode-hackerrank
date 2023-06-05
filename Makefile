@@ -8,7 +8,8 @@ IN_DIR = input
 BINS = $(addprefix $(BIN_DIR)/, \
 				sum_of_round_numbers.out\
 				black_and_white.out\
-				restore_the_wheather.out)
+				restore_the_wheather.out\
+				karina_and_array.out)
 
 all: $(BIN_DIR) $(BINS)
 
