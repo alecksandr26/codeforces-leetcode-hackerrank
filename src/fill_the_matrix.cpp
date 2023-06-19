@@ -19,30 +19,34 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-// url: https://codeforces.com/problemset/problem/1822/B
-// solution: https://www.youtube.com/watch?v=9Lsuv0pZfqM
+// url: https://codeforces.com/problemset/problem/1841/E
+// Too complex :(
+
+void solve(void)
+{
+	st n;
+	cin >> n;
+	
+	ul arr[n];
+	
+	for (st i = 0; i < n; i++)
+		cin >> arr[i];
+
+	ul amount;
+	cin >> amount;
+
+	
+	
+	
+}
 
 int main(void)
 {
-	st t, n;
+	st t;
 	cin >> t;
 
-	while (t--) {
-		cin >> n;
-		ll *arr = new ll[n];
-
-		for (st i = 0; i < n; i++)
-			cin >> arr[i];
-
-		sort(arr, arr + n);
-		
-		cout << (max(arr[0] * arr[1], arr[n - 2] * arr[n - 1])) << endl;
-		
-		delete[] arr;
-	}
-
+	while (t--)
+		solve();
+	
 	return 0;
 }
-
-
-

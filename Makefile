@@ -10,7 +10,8 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				black_and_white.out\
 				restore_the_wheather.out\
 				karina_and_array.out\
-				sort_with_step.out)
+				sort_with_step.out\
+				character_blocking.out)
 
 all: $(BIN_DIR) $(BINS)
 
