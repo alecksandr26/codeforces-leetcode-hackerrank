@@ -11,7 +11,17 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				restore_the_wheather.out\
 				karina_and_array.out\
 				sort_with_step.out\
-				character_blocking.out)
+				character_blocking.out\
+				medium_number.out\
+				water_station.out\
+				filter.out\
+				pi.out\
+				new_scheme.out\
+				full_moon.out\
+				order_something_else.out\
+				edge_checker_2.out\
+				restaurant.out\
+				remeaining_time.out)
 
 all: $(BIN_DIR) $(BINS)
 
