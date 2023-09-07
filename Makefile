@@ -21,7 +21,10 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				order_something_else.out\
 				edge_checker_2.out\
 				restaurant.out\
-				remeaining_time.out)
+				remeaining_time.out\
+				yes_or_yes.out\
+				horsesho.out\
+				swap_odd_and_even.out)
 
 all: $(BIN_DIR) $(BINS)
 

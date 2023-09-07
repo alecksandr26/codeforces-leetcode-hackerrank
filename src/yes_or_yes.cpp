@@ -22,8 +22,16 @@ using namespace std;
 
 void solve(void)
 {
-	
-	
+	string y;
+	cin >> y;
+
+	if (y.size() == 3
+	    and (y[0] == 'y' or y[0] == 'Y')
+	    and (y[1] == 'e' or y[1] == 'E')
+	    and (y[2] == 's' or y[2] == 'S'))
+		cout << "YES" << ENDL;
+	else
+		cout << "NO" << ENDL;
 }
 
 int main(void)
@@ -34,7 +42,14 @@ int main(void)
 
 	while (t--)
 		solve();
+		
+	
 	
 	return 0;
 }
+
+
+
+
+
 

@@ -10,7 +10,6 @@
 #define abs(a) (((a) > 0) ? (a) : -1 * (a))
 #define max(a, b) (((a) > (b)) ? (a) : (b))
 #define min(a, b) (((a) > (b)) ? (b) : (a))
-#define ENDL '\n'
 template<typename T>
 void swap(T &a, T &b)
 {
@@ -20,21 +19,33 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
+	ll h[4];
+	ll total;
 
-	while (t--)
-		solve();
-	
+	cin >> h[0] >> h[1] >> h[2] >> h[3];
+
+	map<ll, ll> m;
+
+	for (int i = 0; i < 4; i++) {
+		if (m.find(h[i]) == m.end())
+			m.insert({h[i], 0});
+		else
+			m[h[i]]++;
+	}
+
+
+	total = 0;
+	for (auto i : m)
+		total += i.second;
+
+	cout << total << endl;
 	return 0;
 }
+
+
+
 

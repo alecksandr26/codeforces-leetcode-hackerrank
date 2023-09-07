@@ -22,6 +22,8 @@ using namespace std;
 
 void solve(void)
 {
+	st n;
+	cin >> n;
 	
 	
 }

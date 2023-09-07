@@ -20,20 +20,22 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
-	ios;
-	st t;
-	cin >> t;
+	string s;
+	
+	cin >> s;
 
-	while (t--)
-		solve();
+	st n = s.size();
+	for (st i = 0; i < n; i += 2) {
+		char temp = s[i + 1];
+		s[i + 1] = s[i];
+		s[i] = temp;
+	}
+
+
+	cout << s << ENDL;
 	
 	return 0;
 }
