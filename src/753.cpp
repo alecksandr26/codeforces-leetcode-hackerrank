@@ -23,22 +23,19 @@ using namespace std;
 int main(void)
 {
 	ios;
-	ll x, a, b;
-	cin >> x >> a >> b;
+	ll x;
 
+	cin >> x;
 
-	if (b <= a)
-		cout << "delicious" << endl;
-	else {
-		ll dif = b - a;
+	if (x == 3 || x == 5 || x == 7)
+		cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
 
-		if (dif <= x)
-			cout << "safe" << endl;
-		else
-			cout << "dangerous" << endl;
-	}
 	
 	
 	return 0;
 }
+
+
 

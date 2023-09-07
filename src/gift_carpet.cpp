@@ -22,31 +22,34 @@ using namespace std;
 
 void solve(void)
 {
-	st n;
-	cin >> n;
+	st n, m;
+	cin >> n >> m;
 
-	ll even = 0, odd = 0, m;
-	for (st i = 0; i < n; i++) {
-		cin >> m;
-		
-		bool e = true;
-		if (m % 2 != 0)
-			e = false;
-			
-		if (i % 2 == 0) {
-			if (!e)
-				even++;
-		} else {
-			if (e)
-				odd++;
-		}
-	}
+	vector<vector<char>> mat(n, vector<char> (m, 0));
+	stack<char> s;
+	
+	s.push('a');
+	s.push('k');
+	s.push('i');
+	s.push('v');
+	
+	
+	for (st i = 0; i < n; i++)
+		for (st j = 0; j < m; j++)
+			cin >> mat[i][j];
 
-	if (even == odd)
-		cout << even << ENDL;
-	else
-		cout << -1 << ENDL;
-
+	for (st j = 0; j < m; j++)
+		for (st i = 0; i < n; i++)
+			if (!s.empty() && s.top() == mat[i][j]) {
+				s.pop();
+				break;
+			}
+	
+	string res = "YES";
+	if (s.size() > 0)
+		res = "NO";
+	
+	cout << res << ENDL;
 }
 
 int main(void)
@@ -60,4 +63,9 @@ int main(void)
 	
 	return 0;
 }
+
+
+
+
+
 

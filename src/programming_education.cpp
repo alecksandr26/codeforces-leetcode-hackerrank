@@ -19,26 +19,24 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-
 int main(void)
 {
 	ios;
-	ll x, a, b;
-	cin >> x >> a >> b;
+	ll n, a, b;
 
 
-	if (b <= a)
-		cout << "delicious" << endl;
+	cin >> n;
+
+	if (n == 1)
+		cout << "Hello World" << endl;
 	else {
-		ll dif = b - a;
-
-		if (dif <= x)
-			cout << "safe" << endl;
-		else
-			cout << "dangerous" << endl;
+		cin >> a >> b;
+		cout << (a + b) << endl;
 	}
 	
 	
 	return 0;
 }
+
+
 
