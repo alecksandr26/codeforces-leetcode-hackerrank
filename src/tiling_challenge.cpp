@@ -37,8 +37,8 @@ int main(void)
 		for (int j = 0; j < (int) n; j++)
 			if (mat[i][j] == '.') {
 				// Try to put the piece
-				if ((j > - 1 && mat[i][j - 1] == '.')
-				    && (i > -1 && mat[i - 1][j] == '.')
+				if ((j > 0 && mat[i][j - 1] == '.')
+				    && (i > 0 && mat[i - 1][j] == '.')
 				    && (j < (int) n - 1 && mat[i][j + 1] == '.')
 				    && (i < (int) n - 1 && mat[i + 1][j] == '.')) {
 					mat[i][j - 1] = '#';
