@@ -27,7 +27,7 @@ int main(void)
 	ll n, m;
 
 	cin >> n >> m;
-
+	
 	map<string, string> mp;
 	
 	while (n--) {
@@ -56,35 +56,23 @@ int main(void)
 			mp3[mp[name]] = 1;
 	}
 
-	string voted = "";
+	string voted = "zzzz";
 	ll votes = LONG_MIN;
 	for (auto d : mp3) {
-		if (d.second >= votes
-		    and lexicographical_compare(d.first.c_str(),
-						d.first.c_str()
-						+ d.first.size(),
-						voted.c_str(),
-						voted.c_str()
-						+ voted.size())) {
+		
+		if (d.second > votes || (d.second == votes && strcmp(voted.c_str(), d.first.c_str()) > 0)) {
 			voted = d.first;
 			votes = d.second;
 		}
 	}
 
 	cout << voted << endl;
+	voted = "zzzzz";
 	votes = LONG_MIN;
-	voted = "";
 	for (auto d : mp2) {
-		if (d.second >= votes) {
-			    lexicographical_compare(d.first.c_str(),
-						    d.first.c_str()
-						    + d.first.size(),
-						    voted.c_str(),
-						    voted.c_str()
-						    + voted.size());
-			
-			    voted = d.first;
-			    votes = d.second;
+		if (d.second > votes || (d.second == votes && strcmp(voted.c_str(), d.first.c_str()) >= 0)) {
+			voted = d.first;
+			votes = d.second;
 		}
 	}
 

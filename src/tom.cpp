@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #define st size_t
 #define ll long long
@@ -20,31 +21,30 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
+
+
 int main(void)
 {
 	ios;
-	st n;
+	ll n;
+
 	cin >> n;
-
-	map<ll, ll> m;
-	ll l;
 	
+	set<string> s;
+
 	while (n--) {
-		cin >> l;
-		if (m.count(l))
-			m[l]++;
-		else
-			m[l] = 1;
+		string name;
+
+		cin >> name;
+
+		if (s.count(name))
+			cout << "YES" << ENDL;
+		else {
+			cout << "NO" << ENDL;
+			s.insert(name);
+		}
 	}
-
-	ll mn = 0;
-	for (auto d : m) 
-		mn += (d.second - d.first < d.second
-		       && d.second - d.first >= 0)
-			? d.second - d.first
-			: d.second;
-
-	cout << mn << endl;
+	
 	
 	return 0;
 }

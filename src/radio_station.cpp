@@ -20,32 +20,37 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
+
+
 int main(void)
 {
 	ios;
-	st n;
-	cin >> n;
 
-	map<ll, ll> m;
-	ll l;
+	ll n, m;
+
+	cin >> n >> m;
+
+	map<string, string> ips;
 	
 	while (n--) {
-		cin >> l;
-		if (m.count(l))
-			m[l]++;
-		else
-			m[l] = 1;
+		string name, ip;
+		cin >> name >> ip;
+		ips[ip] = name;
 	}
 
-	ll mn = 0;
-	for (auto d : m) 
-		mn += (d.second - d.first < d.second
-		       && d.second - d.first >= 0)
-			? d.second - d.first
-			: d.second;
+	while (m--) {
+		string cmd, ip, ip_c;
+		cin >> cmd >> ip;
 
-	cout << mn << endl;
+		ip_c = ip.substr(0, ip.size() - 1);
+
+		cout << cmd << " " << ip << " #" << ips[ip_c] << ENDL;
+	}
+	
 	
 	return 0;
 }
+
+
+
 

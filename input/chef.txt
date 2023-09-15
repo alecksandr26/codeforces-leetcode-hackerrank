@@ -1,10 +1,5 @@
-4 5
-Ramanujan India
-Torricelli Italy
-Gauss Germany
-Lagrange Italy
-Ramanujan
-Torricelli
-Torricelli
-Ramanujan
-Lagrange
+2 2
+Newton England
+Euclid Greece
+Newton
+Euclid
