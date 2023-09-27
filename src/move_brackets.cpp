@@ -22,6 +22,24 @@ using namespace std;
 
 void solve(void)
 {
+	st n;
+	cin >> n;
+
+	string str;
+	
+	cin >> str;
+
+	stack<char> s;
+
+	for (char &c : str) {
+		if (c == ')') {
+			if (!s.empty() && s.top() == '(')
+				s.pop();
+		} else
+			s.push(c);
+	}
+
+	cout << s.size() << ENDL;
 	
 	
 }

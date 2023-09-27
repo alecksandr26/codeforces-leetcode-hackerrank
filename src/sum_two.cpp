@@ -20,21 +20,41 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
+	st n;
+	ll x;
+	cin >> n >> x;
+
+	vector<ll> arr(n);
+
+	map<ll, stack<st>> m;
+
+	for (st i = 0; i < n; i++) {
+		cin >> arr[i];
+		m[arr[i]].push(i);
+	}
+
+	vector<ll> sol;
+	for (st i = 0; i < n; i++) {
+		if (m.count(x - arr[i])
+		    && m[x - arr[i]].top() != i) {
+			m[x - arr[i]].pop();
+			sol.push_back(i);
+		}
+	}
+
+	if (sol.size() > 0) {
+		sort(sol.begin(), sol.end());
+		for (ll &a : sol)
+			cout << a + 1 << ENDL;
+	} else {
+		cout << "IMPOSSIBLE" << ENDL;
+	}
 	
-	while (t--)
-		solve();
-	
+
 	return 0;
 }
 

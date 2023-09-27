@@ -20,21 +20,39 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
-
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
+
+	st n, i = 0;
+	cin >> n;
 	
-	while (t--)
-		solve();
+	vector<ll> arr(n);
+	ll sum = 0;
+	while (n--) {
+		cin >> arr[i];
+		arr[i] += sum;
+		sum = arr[i++];
+	}
+
+	cin >> n;
+
+	while (n--) {
+		ll i, j;
+		cin >> i >> j;
+		if (i == 0)
+			cout << arr[j] << endl;
+		else
+			cout << arr[j] - arr[i - 1] << endl;
+		
+	}
 	
 	return 0;
 }
+
+
+
+
+
+
 

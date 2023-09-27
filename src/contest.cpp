@@ -20,21 +20,29 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
-	
-	while (t--)
-		solve();
+	st n;
+	cin >> n;
+
+	ll t = 0;
+	while (n--) {
+		ll n1, n2, n3;
+
+		cin >> n1 >> n2 >> n3;
+
+		if (n1 + n2 + n3 >= 2)
+			t++;
+	}
+
+
+	cout << t << ENDL;
 	
 	return 0;
 }
+
+
+
 

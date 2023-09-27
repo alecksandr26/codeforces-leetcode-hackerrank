@@ -20,20 +20,31 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
+	ll n;
+	cin >> n;
+	vector<pair<ll, ll>> ts(n);
 	
-	while (t--)
-		solve();
+	for (int i = 0; i < n; i++)
+		cin >> ts[i].first >> ts[i].second;
+
+
+	sort(ts.begin(), ts.end(), [](auto p1, auto p2) -> bool {
+		return p1.first < p2.first;
+	});
+
+
+	ll r = 0;
+	ll t = 0;
+	for (int i = 0; i < n; i++) {
+		t += ts[i].first;
+		r += ts[i].second - t;
+	}
+
+	cout << r << ENDL;
 	
 	return 0;
 }

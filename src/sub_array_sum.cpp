@@ -20,20 +20,28 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-void solve(void)
-{
-	
-	
-}
 
 int main(void)
 {
 	ios;
-	st t;
-	cin >> t;
+	st n;
+	cin >> n;
+
+	vector<ll> arr(n);
+
+	int i = 0;
+
+	while (n--)
+		cin >> arr[i++];
+
+	ll m = LONG_MIN, aux = 0;
+	for (i = 0; i < (int) arr.size(); i++) {
+		aux += (arr[i] + aux > 0) ? arr[i] + aux : 0;
+		m = max(arr[i] + aux, m);
+	}
+		
+	cout << m << ENDL;
 	
-	while (t--)
-		solve();
 	
 	return 0;
 }
