@@ -26,7 +26,8 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				horsesho.out\
 				swap_odd_and_even.out\
 				gift_carpet.out\
-				beautiful_mat.out)
+				beautiful_mat.out\
+				fizzfuzz.out)
 
 all: $(BIN_DIR) $(BINS)
 
