@@ -20,27 +20,34 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-
 int main(void)
 {
 	ios;
 	st n;
 	cin >> n;
+	
+	ll c, a, s, p, tt;
+	cin >> c >> a >> s >> p;
+	cout << c << ENDL;
+	n--;
+	tt = a + s;
+	
+	while (n--) {
+		cin >> c >> a >> s >> p;
 
-	vector<ll> arr(n);
-	int i = 0;
-	
-	while (n--)
-		cin >> arr[i++];
-	
-	ll m = arr[0], aux = arr[0];
-	for (i = 1; i < (int) arr.size(); i++) {
-		aux = max(arr[i], aux + arr[i]);
-		m = max(m, aux);
+		// calcula si teller termina antes de que se termine
+		// la paciencia del cliente
+		if (tt <= a + p) {
+			cout << c << ENDL;
+			// revisamos si el cliente habia llegado antes
+			tt = (a <= tt) ? tt + s : a + s;
+		}
 	}
-		
-	cout << m << ENDL;
 	
 	return 0;
 }
+
+
+
+
 

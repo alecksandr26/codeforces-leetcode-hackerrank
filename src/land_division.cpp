@@ -24,22 +24,18 @@ using namespace std;
 int main(void)
 {
 	ios;
-	st n;
-	cin >> n;
+	unsigned a, b, h;
+	double A, T, h2;
+	scanf("%u %u %u", &a, &b, &h);
 
-	vector<ll> arr(n);
-	int i = 0;
+	// Altura triangulo inferior
+	h2 = (a * h) / (double) (b + a);
 	
-	while (n--)
-		cin >> arr[i++];
-	
-	ll m = arr[0], aux = arr[0];
-	for (i = 1; i < (int) arr.size(); i++) {
-		aux = max(arr[i], aux + arr[i]);
-		m = max(m, aux);
-	}
-		
-	cout << m << ENDL;
+	// Area inferior
+	A = (double) b * h2 / 2.0;
+	T = (double) (a + b) * h / 2.0;
+
+	printf("%0.9lf\n", ((T - 2.0 * A) / 2.0) - A);
 	
 	return 0;
 }

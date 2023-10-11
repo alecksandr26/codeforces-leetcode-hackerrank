@@ -20,26 +20,36 @@ void swap(T &a, T &b)
 }
 using namespace std;
 
-
 int main(void)
 {
 	ios;
 	st n;
-	cin >> n;
-
+	ll t;
+	cin >> n >> t;
+	
 	vector<ll> arr(n);
+
 	int i = 0;
-	
-	while (n--)
-		cin >> arr[i++];
-	
-	ll m = arr[0], aux = arr[0];
-	for (i = 1; i < (int) arr.size(); i++) {
-		aux = max(arr[i], aux + arr[i]);
-		m = max(m, aux);
+	ll sum = 0;
+	while (n--) {
+		cin >> arr[i];
+		sum += arr[i];
+		arr[i++] = sum;
 	}
-		
-	cout << m << ENDL;
+	
+	int j = -1;
+	i = 0;
+	ll ans = 0;
+	while (i < (int) arr.size()) {
+		if (arr[i] - ((j > -1) ? arr[j] : 0) <= t) {
+			i++;
+			ans = max(ans, i - j - 1);
+		} else
+			j++;
+
+	}
+
+	cout << ans << ENDL;
 	
 	return 0;
 }

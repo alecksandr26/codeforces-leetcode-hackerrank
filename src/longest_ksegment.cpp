@@ -24,23 +24,44 @@ using namespace std;
 int main(void)
 {
 	ios;
-	st n;
-	cin >> n;
-
-	vector<ll> arr(n);
+	st n, k;
+	
+	// Que bugs :'(
+	scanf("%zu %zu", &n, &k);
+	
+	ul arr[n];
 	int i = 0;
+	while (i < (int) n)
+		scanf("%lu", &arr[i++]);
 	
-	while (n--)
-		cin >> arr[i++];
-	
-	ll m = arr[0], aux = arr[0];
-	for (i = 1; i < (int) arr.size(); i++) {
-		aux = max(arr[i], aux + arr[i]);
-		m = max(m, aux);
+	map<ul, ul> f;
+	int l = 0, r = 0, l_m = 0, r_m = 0, dc = 0;
+	int m_s = 0;
+	while (r < (int) n) {
+		if (f[arr[r]] == 0)
+			dc++;
+		f[arr[r]]++;
+
+		while (dc > (int) k) {
+			f[arr[l]]--;
+			if (f[arr[l]] == 0)
+				dc--;
+			l++;
+		}
+
+		if (r - l + 1 > m_s) {
+			m_s = r - l + 1;
+			r_m = r;
+			l_m = l;
+		}
+
+		r++;
 	}
-		
-	cout << m << ENDL;
+
+	printf("%i %i\n", l_m + 1, r_m + 1);
 	
 	return 0;
 }
+
+
 
