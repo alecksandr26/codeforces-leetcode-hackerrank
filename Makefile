@@ -27,7 +27,8 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				swap_odd_and_even.out\
 				gift_carpet.out\
 				beautiful_mat.out\
-				fizzfuzz.out)
+				fizzfuzz.out\
+				C_recursion.out)
 
 all: $(BIN_DIR) $(BINS)
 
@@ -39,3 +40,5 @@ $(BIN_DIR)/%.out: $(SRC_DIR)/%.cpp
 
 %.out: $(BIN_DIR)/%.out $(IN_DIR)/%.txt
 	cat $(word 2, $^) | ./$<
+
+
