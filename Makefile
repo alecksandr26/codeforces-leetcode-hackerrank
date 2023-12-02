@@ -28,7 +28,8 @@ BINS = $(addprefix $(BIN_DIR)/, \
 				gift_carpet.out\
 				beautiful_mat.out\
 				fizzfuzz.out\
-				C_recursion.out)
+				C_recursion.out\
+				cutting_monotone_sequence.out)
 
 all: $(BIN_DIR) $(BINS)
 
