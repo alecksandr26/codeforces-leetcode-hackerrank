@@ -9,10 +9,25 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ul;
-typedef long double ld;
+
+// problem: https://codeforces.com/problemset/gymProblem/101498/L
+
+vector<pair<ul, ll>> adj[N];
 
 void solve(void)
 {
+	ul n, m;
+
+	cin >> n >> m;
+
+
+	while (m--) {
+		ul a, b;
+		ll w;
+
+		cin >> a >> b >> w;
+		adj[a].push_back({b, w});
+	}
 	
 }
 
@@ -27,4 +42,6 @@ int main(void)
 	
 	return 0;
 }
+
+
 

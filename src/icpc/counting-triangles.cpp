@@ -9,17 +9,25 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ul;
-typedef long double ld;
+
+// problem: https://codeforces.com/gym/102890/problem/C
 
 void solve(void)
 {
+	ll n, k;
 	
+	cin >> n >> k;
+	n++;
+	k++;
+	
+	cout << (k * (((n * (n + 1)) / 2) % 1000000007))
+		% 1000000007 << ENDL;
 }
 
 int main(void)
 {
 	ios;
-	ul t;
+	ll t;
 	cin >> t;
 	
 	while (t--)
@@ -27,4 +35,8 @@ int main(void)
 	
 	return 0;
 }
+
+
+
+
 

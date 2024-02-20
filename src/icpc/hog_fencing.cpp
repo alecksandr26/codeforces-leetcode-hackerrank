@@ -11,20 +11,35 @@ typedef long long ll;
 typedef unsigned long long ul;
 typedef long double ld;
 
-void solve(void)
-{
-	
-}
-
 int main(void)
 {
 	ios;
-	ul t;
-	cin >> t;
 	
-	while (t--)
-		solve();
+	ll n;
+	cin >> n;
+
+	// P = 2(b + h) => P / 2 = b + h
+	ll m = n / 2;
+	m--;
+
+	ll A = LONG_MIN;
+	// A = b * h
+	ll i;
+	for (i = 1; i <= m; i++) {
+		if (A < i * m)
+			A = i * m;
+		m -= 1;
+		
+	}
+
+	cout << A << ENDL;
+	
 	
 	return 0;
 }
+
+
+
+
+
 

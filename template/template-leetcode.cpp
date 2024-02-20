@@ -9,6 +9,7 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ul;
+typedef long double ld;
 
 class Solution {
 public:
