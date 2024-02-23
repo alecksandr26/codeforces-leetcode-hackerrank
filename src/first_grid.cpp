@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-#define N ((int) 1e6)
-
 using namespace std;
 
 #define ios ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
@@ -9,7 +7,6 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ul;
-typedef long double ld;
 typedef vector<ll> vll;
 typedef vector<ul> vul;
 typedef pair<ll, ll> pll;
@@ -21,7 +18,16 @@ typedef pair<ll, ll> pll;
 int main(void)
 {
 	ios;
+
+	string s1, s2;
+	cin >> s1;
+	cin >> s2;
 	
 	return 0;
 }
+
+
+
+
+
 
