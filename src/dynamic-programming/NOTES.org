@@ -1,0 +1,45 @@
+* Dynamic Programming
+Is problem-solving technique used in compute science and mathematics
+to efficiently solve complex problems by breaking then down into smaller,
+overlapping subproblems. Instead of solving the same
+subproblms multiple times, DP stores their results and reuses them,
+significantly improving efficiency.
+
+** Key Concepts of Dynamic Programming
+1. Optimal Substructure - A problem has an optimal substructure if an optimal
+   solution can be built from optimal solutions of its subproblems.
+2. Overlapping Subproblems - A problem has overlapping subproblems if the
+   smaller subproblems are solved multiple times.
+
+** Approaches to Dynamic Programming
+1. Top-Down Approach (Memoization)
+   Solve the problem resursively and store the results of
+   subproblems in a tbale to avoid redundant calculations.
+   
+2. Button-Up Approach (Tabulation)
+   Solve the problem iteratively by filling up a table from
+   base cases up to the final solution,
+   
+*** Memoization Approach
+1. Make it work:
+   1. visualize the problem as a tree
+   2. implement the tree using recursion
+   3. test it
+
+2. Make it efficient
+   1. Add a memo object
+   2. Add a base case to return memo values
+   3. store return values into the memo
+
+*** Tabulation Approach
+1. visualize the problem as a table
+2. size the table based on the inputs (1D or 2D or 3D)
+3. initialize the table with default values
+4. seed the trivial answer into the table
+5. iterate through the table
+6. fill further positions based on the current position
+
+
+
+
+
