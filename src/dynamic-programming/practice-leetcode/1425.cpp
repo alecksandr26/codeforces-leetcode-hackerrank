@@ -23,30 +23,34 @@ public:
 
 class Solution2 {
 public:
-	int constrainedSubsetSum(vector<int> &A, int k) {
-		// By default pq compare the first element in a pair
+	int constrainedSubsetSum(vector<int>& A, int k) {
+		int n = A.size();
+		vector<int> dp(n);
+		// Max-heap that stores pairs (dp value, index)
 		priority_queue<pair<int, int>> pq;
-		int DP[A.size()];
-		memset(DP, 0, sizeof(int) * A.size());
-		int m = INT_MIN;
-		for (int i = 0; i < A.size(); i++) {
-			DP[i] = A[i];
-			pair<int, int> mk = {0, 0};
-			while (pq.size()) {
-				mk = pq.top();
-				pq.pop();
-				if (mk.second >= i - k)
-					break;
-			}
-			DP[i] = max(DP[i], A[i] + mk.first);
-			pq.push({DP[i], i});
-			m = max(m, DP[i]);
-		}
+        
+		dp[0] = A[0];
+		pq.push({dp[0], 0});
+		int result = dp[0];
 
-		return m;
+		for (int i = 1; i < n; i++) {
+			// Remove indices that are out of the current window
+			while (!pq.empty() && pq.top().second < i - k) {
+				pq.pop();
+			}
+            
+			// If the max dp in the window is positive, add it to A[i]
+			// Otherwise, just take A[i] (i.e. start a new subsequence)
+			dp[i] = A[i] + (pq.empty() ? 0 : max(0, pq.top().first));
+            
+			// Push the current value and index into the heap
+			pq.push({dp[i], i});
+			result = max(result, dp[i]);
+		}
+        
+		return result;
 	}
 };
-
 
 int main(void)
 {

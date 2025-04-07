@@ -32,14 +32,43 @@ public:
 };
 
 
+class Solution2 {
+public:
+	int lengthOfLIS(vector<int> &A) {
+		int n = A.size();
+		vector<int> dp(n, 1);
+		int ans = 0;
+		for (int i = 1; i < n; i++)
+			for (int j = 0; j < i; j++)
+				if (A[i] > A[j]) {
+					dp[i] = max(dp[i], dp[j] + 1);
+					ans = max(ans, dp[i]);
+				}
+
+		return ans;
+	}
+};
+
+
 
 int main(void)
 {
-	Solution sol;
-	// vector<int> A = {1,3,6,7,9,4,10,5,6};
+	Solution2 sol;
+	vector<int> A;
+	int ans;
 	
-	int ans = sol.lengthOfLIS(A);
+	// A = {7,7,7,7,7,7,7};
+	// ans = sol.lengthOfLIS(A);
+	// cout << ans << endl;
+	
+	// A = {10, 9, 2, 5, 3, 7, 101, 18};
+	// ans = sol.lengthOfLIS(A);
+	// cout << ans << endl;
+
+	A = {-4, -2, -1, 0, -1, -2, -3};
+	ans = sol.lengthOfLIS(A);
 	cout << ans << endl;
+	
 	return 0;
 }
 
