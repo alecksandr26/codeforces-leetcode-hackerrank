@@ -2,8 +2,6 @@
 #include <unordered_map>
 using namespace std;
 
-
-
 class Ds {
 private:
 	unordered_map<int, int> elems;
@@ -15,7 +13,6 @@ public:
 		elems[x]++;
 		freq[elems[x]]++;
 	}
-
 	void del(int x) {
 		if (not elems.count(x)) return;
 		freq[elems[x]]--;
